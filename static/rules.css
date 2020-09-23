@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+}
+
+.jumbotron {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+p {
+  font-size: larger;
+}
