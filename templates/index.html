@@ -68,8 +68,16 @@
       style="max-width: 40rem; margin: auto"
       id="question-card"
     >
-      <div class="card-header" id="view-question-number">
-        Question #<span id="question-number">1</span>
+      <div
+        class="card-header"
+        id="view-question-number"
+        style="display: flex; justify-content: space-between"
+      >
+        <div>Question #<span id="question-number">1</span></div>
+        <div>
+          Wrong Answers:
+          <span id="wrong-answers-count">0</span>
+        </div>
       </div>
       <div class="card-text" style="margin: auto" id="game-info">
         <div style="margin: auto; text-align: center">
@@ -80,7 +88,7 @@
           Good luck!
         </h3>
       </div>
-      <div class="card-body">
+      <div class="card-body" id="main-card">
         <button
           type="button"
           class="btn btn-primary card-title"
@@ -99,6 +107,7 @@
             class="form-control"
             placeholder="..."
             id="answer"
+            required
           />
         </div>
       </div>
