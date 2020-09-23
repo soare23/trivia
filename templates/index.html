@@ -14,11 +14,11 @@
       href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap"
       rel="stylesheet"
     /> -->
-    <title>ascking</title>
+    <title>Trivia Night</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a class="navbar-brand" href="#">ascking</a>
+      <a class="navbar-brand" href="/">Trivia Night</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -33,38 +33,21 @@
 
       <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#"
-              >Home <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Categories</a>
-          </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Leaderboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Rules</a>
+            <a class="nav-link" href="/rules">Rules</a>
           </li>
         </ul>
       </div>
     </nav>
 
     <div class="jumbotron">
-      <h1 class="display-3">Welcome to ascking</h1>
-      <p class="lead">Trivia game!</p>
-      <hr class="my-4" />
-      <p>
-        Answer corectly to as many questions as possible and fight for the first
-        place on the leaderboard!
-      </p>
-      <p class="lead">
-        <a class="btn btn-primary btn-lg" href="#" role="button">Leaderboard</a>
-      </p>
+      <img src="/static/images/trivia_background.png" alt="background-image" />
     </div>
     <div
-      class="card border-primary mb-3"
+      class="card mb-3"
       style="max-width: 40rem; margin: auto"
       id="question-card"
     >
@@ -108,7 +91,7 @@
             class="form-control"
             placeholder="..."
             id="answer"
-            required
+            style="text-align: center"
           />
         </div>
       </div>
@@ -119,7 +102,11 @@
       >
         I am sure!
       </button>
-      <button type="button" class="btn btn-outline-danger options" id="skipBtn">
+      <button
+        type="button"
+        class="btn btn-outline-primary options"
+        id="skipBtn"
+      >
         Skip :(
       </button>
     </div>
