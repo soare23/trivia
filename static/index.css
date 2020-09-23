@@ -4,11 +4,27 @@
   letter-spacing: 1px;
 } */
 
+.jumbotron img {
+  margin: auto;
+  max-width: 100%;
+}
+
+.jumbotron {
+  display: flex;
+  height: fit-content;
+  border-bottom: solid var(--primary);
+  border-radius: 0;
+}
+
 .card-title {
   font-size: 2em !important;
   display: flex !important;
   justify-content: center !important;
   text-align: center !important;
+}
+
+.card {
+  border: none;
 }
 
 .options {
@@ -24,6 +40,9 @@
 
 .card-header {
   visibility: hidden;
+  background: var(--primary);
+  border-radius: 10px !important;
+  color: #fff;
 }
 
 .answer-info {
