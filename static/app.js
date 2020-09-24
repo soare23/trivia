@@ -18,7 +18,7 @@ let playerLives = 3;
 
 async function getAsyncQuestion() {
   count++;
-  const res = await fetch('https://jservice.io/api/random?count=1'); // changed to https
+  const res = await fetch('https://jservice.io/api/random?count=1');
   const data = await res.json();
   questionNumber.innerText = count;
   question.innerText = data[0].question;
