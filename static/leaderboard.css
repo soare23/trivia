@@ -3,7 +3,7 @@ body {
 }
 
 .jumbotron {
-  background-color: var(--white);
+  background-color: #e9ecef;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -12,9 +12,17 @@ body {
   margin: 0;
   border-radius: 0;
   border-color: var(--primary);
+  color: var(--info);
 }
 p {
   font-size: larger;
+}
+
+.top10-banner {
+  display: flex;
+  justify-content: center;
+  color: var(--info);
+  margin-top: 15px;
 }
 
 .table-container {
@@ -30,4 +38,9 @@ p {
   text-align: center;
   border: solid;
   border-color: var(--primary);
+}
+
+.jumbotron img {
+  margin: auto;
+  max-width: 100%;
 }
