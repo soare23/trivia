@@ -44,7 +44,6 @@ function startGame() {
 
 function checkAnswer() {
   if (answer.value == localStorage.getItem('currentQuestionAnswer')) {
-    console.log('correct answer');
     playerPoints += 10;
     localStorage.setItem('playerPoints', playerPoints);
     score.innerText = playerPoints;
@@ -60,7 +59,6 @@ function checkAnswer() {
       question.innerText = localStorage.getItem('currentQuestion');
     }, 2000);
   } else {
-    console.log('wrong answer');
     playerLives -= 1;
     localStorage.setItem('playerLives', playerLives);
     wrongAnswerCount.innerText = playerLives;
@@ -75,7 +73,6 @@ function checkAnswer() {
         getAsyncQuestion();
         question.innerText = localStorage.getItem('currentQuestion');
       }, 2000);
-      console.log(playerLives);
     } else {
       viewQuestion.style.visibility = 'hidden';
       nextBtn.style.visibility = 'hidden';
@@ -83,18 +80,21 @@ function checkAnswer() {
       answerForm.style.visibility = 'hidden';
       question.innerHTML =
         'YOU LOST!<br><br>Enter your name below and check the leaderboards!';
-      let playerName = document.createElement('div');
-      playerName.innerHTML = `
-      <form>
+      let playerData = document.createElement('div');
+      playerData.innerHTML = `
+      <form id="user_data" action="/" method="POST">
         <label class="col-form-label player-name-label" for="playerName">Enter your name</label>
         <input type="text" class="form-control player-name-input" placeholder="Your name..." id="playerName">
-        <button type="button" class="btn btn-outline-success submit-player-name-btn" id="submitBtn">
+        <button type="submit" class="btn btn-outline-success submit-player-name-btn" id="submitBtn">
           Submit
         </button>
       </form>
       `;
-      playerName.className = 'form-group';
-      mainCard.appendChild(playerName);
+      playerData.className = 'form-group';
+      mainCard.appendChild(playerData);
+      console.log(playerData);
+      console.log(document.getElementById('playerName'));
+      playerData.addEventListener('submit', getUserData);
     }
   }
 }
@@ -119,6 +119,30 @@ async function skipQuestion() {
       skipBtn.innerText = 'Skip :(';
     }, 2000);
   }
+}
+
+// Send user data to server -> database
+
+function getUserData(e) {
+  e.preventDefault();
+  let userInput = document.getElementById('playerName').value;
+  let score = localStorage.getItem('playerPoints');
+  console.log(userInput);
+  console.log(playerPoints);
+
+  const data = {
+    username: userInput,
+    score: score,
+  };
+
+  fetch('/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+    cache: 'no-cache',
+  }).then((window.location.href = '/leaderboard'));
 }
 
 // Event listeners
