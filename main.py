@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 
-ENV = 'dev'
+ENV = 'prod'
 
 
 if ENV == 'dev':
@@ -11,7 +11,7 @@ if ENV == 'dev':
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://soare:2302@localhost/test_db'
 else:
     app.debug = False
-    app.config['SQLALCHEMY_DATABASE_URI'] = ''
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://zbeubugiegpsjm:1494466c39ee9e22ccc39bbf2fb179493c0e6d73dceb6e8ab0b62dbb591801f1@ec2-35-172-73-125.compute-1.amazonaws.com:5432/df2sdcib1164lq'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
