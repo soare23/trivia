@@ -8,6 +8,10 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  background-color: var(--info);
+  color: var(--white);
+  border-radius: 0;
+  border: none;
 }
 p {
   font-size: larger;
