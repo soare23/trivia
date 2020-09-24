@@ -4,7 +4,7 @@ body {
 
 .jumbotron {
   text-align: center;
-  height: 100vh;
+  height: calc(100vh - 56px);
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -12,6 +12,7 @@ body {
   color: var(--white);
   border-radius: 0;
   border: none;
+  margin-bottom: 0 !important;
 }
 p {
   font-size: larger;
