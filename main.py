@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 
-ENV = 'prod'
+ENV = 'env'
 
 
 if ENV == 'dev':
@@ -37,7 +37,7 @@ def hello_world():
         data = Score(username, user_score)
         db.session.add(data)
         db.session.commit()
-        return render_template('index.html')
+        return render_template('leaderboard.html')
     return render_template('index.html')
 
 
