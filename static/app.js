@@ -47,7 +47,6 @@ function checkAnswer() {
     playerPoints += 10;
     localStorage.setItem('playerPoints', playerPoints);
     score.innerText = playerPoints;
-    console.log(playerPoints);
     let answerAlert = document.createElement('div');
     answerAlert.innerHTML = 'CORRECT';
     answerAlert.className = 'btn-success answer-info';
@@ -92,8 +91,6 @@ function checkAnswer() {
       `;
       playerData.className = 'form-group';
       mainCard.appendChild(playerData);
-      console.log(playerData);
-      console.log(document.getElementById('playerName'));
       playerData.addEventListener('submit', getUserData);
     }
   }
@@ -104,7 +101,7 @@ function checkAnswer() {
 async function skipQuestion() {
   if (playerPoints != 0) {
     count++;
-    const res = await fetch('http://jservice.io/api/random?count=1');
+    const res = await fetch('https://jservice.io/api/random?count=1');
     const data = await res.json();
     questionNumber.innerText = count;
     question.innerText = data[0].question;
@@ -127,9 +124,9 @@ function getUserData(e) {
   e.preventDefault();
   let userInput = document.getElementById('playerName').value;
   let score = localStorage.getItem('playerPoints');
-  console.log(userInput);
-  console.log(playerPoints);
-
+  if (score == null) {
+    score = 0;
+  }
   const data = {
     username: userInput,
     score: score,
