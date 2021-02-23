@@ -1,5 +1,11 @@
 # Trivia Game
 
-Back-end: Python/Flask
-Database: PostgreSQL
-Front-end: HTML/CSS/JS/Bootstrap
+Written in VSC<br>
+Github for code management<br>
+Back-end: Python/Flask<br>
+Database: PostgreSQL<br>
+Front-end: HTML/CSS/JS/Bootstrap<br>
+
+# Link to the website
+
+[Check out the project](https://soaretrivia.herokuapp.com 'Trivia Night')
